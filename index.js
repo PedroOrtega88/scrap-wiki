@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
         .then(response => {
             const $ = cheerio.load(response.data);
 
-
+            
             const rapLinks = $('#mw-pages a').map((index, element) => $(element).attr('href')).get();
 
             
@@ -56,7 +56,7 @@ app.get('/', (req, res) => {
 });
 
 // Iniciar el servidor
-const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });
